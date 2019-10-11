@@ -11,7 +11,19 @@ class CursoController extends Controller
 {
     public function index(){                           //get: lmts.api/api/curso
         $cursos = Curso::all();
-        return response()->json($cursos, 201);
+        $response = [];
+        foreach ($cursos as $curso) {
+          $aux = $curso->departamento->nome;
+          $curso->departamentoId = $aux;
+          array_push($response, [
+                                  'id' => $curso->id,
+                                  'nome' => $curso->nome,
+                                  'departamento' => $curso->departamento->nome,
+                                  'campus'  => $curso->departamento->campus->nome,
+
+                                ]);
+        }
+        return response()->json($response, 201);
     }
     public function store(Request $request){           //post: lmts.api/api/curso
         $curso = new Curso();
