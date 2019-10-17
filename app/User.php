@@ -43,4 +43,7 @@ class User extends Authenticatable
         return $this->belongsTo('lmtsApi\Curso', 'cursoId');
     }
 
+    public function log(){
+      return $this->hasMany('lmtsApi\Log');
+    }
 }
