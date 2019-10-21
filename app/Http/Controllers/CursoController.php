@@ -25,12 +25,14 @@ class CursoController extends Controller
         }
         return response()->json($response, 201);
     }
+
     public function store(Request $request){           //post: lmts.api/api/curso
         $curso = new Curso();
         $curso->fill($request->all());
         $curso->save();
         return response()->json($curso, 201);
     }
+
     public function update(Request $request, $id){     //put: lmts.api/api/curso/{id}
         $curso = Curso::find($id);
         if(!$curso) {
@@ -42,6 +44,7 @@ class CursoController extends Controller
         $curso->save();
         return response()->json($curso);
     }
+
     public function destroy($id){                      //delete: lmts.api/api/curso/{id}
         $curso = Curso::find($id);
 
@@ -53,4 +56,5 @@ class CursoController extends Controller
 
         $curso->delete(200);
     }
+
 }

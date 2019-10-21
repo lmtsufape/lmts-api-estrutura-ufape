@@ -7,79 +7,52 @@ use Illuminate\Http\Request;
 
 class TipoUsuarioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+  public function index(){                           //get: lmts.api/api/curso
+      $aux = TipoUsuario::all();
+      $response = [];
+      foreach ($aux as $tipoUsuario) {
+        $aux = $tipoUsuario->departamento->nome;
+        $tipoUsuario->departamentoId = $aux;
+        array_push($response, [
+                                'id' => $tipoUsuario->id,
+                                'nome' => $tipoUsuario->nome,
+                                'departamento' => $tipoUsuario->departamento->nome,
+                                'campus'  => $tipoUsuario->departamento->campus->nome,
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+                              ]);
+      }
+      return response()->json($response, 201);
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+  public function store(Request $request){           //post: lmts.api/api/curso
+      $tipoUsuario = new TipoUsuario();
+      $tipoUsuario->fill($request->all());
+      $tipoUsuario->save();
+      return response()->json($tipoUsuario, 201);
+  }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \lmtsApi\TipoUsuario  $tipoUsuario
-     * @return \Illuminate\Http\Response
-     */
-    public function show(TipoUsuario $tipoUsuario)
-    {
-        //
-    }
+  public function update(Request $request, $id){     //put: lmts.api/api/curso/{id}
+      $tipoUsuario = TipoUsuario::find($id);
+      if(!$tipoUsuario) {
+          return response()->json([
+              'message'   => 'Record not found',
+          ], 404);
+      }
+      $tipoUsuario->fill($request->all());
+      $tipoUsuario->save();
+      return response()->json($tipoUsuario);
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \lmtsApi\TipoUsuario  $tipoUsuario
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(TipoUsuario $tipoUsuario)
-    {
-        //
-    }
+  public function destroy($id){                      //delete: lmts.api/api/curso/{id}
+      $tipoUsuario = TipoUsuario::find($id);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \lmtsApi\TipoUsuario  $tipoUsuario
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, TipoUsuario $tipoUsuario)
-    {
-        //
-    }
+      if(!$tipoUsuario) {
+          return response()->json([
+              'message'   => 'Record not found',
+          ], 404);
+      }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \lmtsApi\TipoUsuario  $tipoUsuario
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(TipoUsuario $tipoUsuario)
-    {
-        //
-    }
+      $tipoUsuario->delete(200);
+  }
+
 }

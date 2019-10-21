@@ -7,79 +7,53 @@ use Illuminate\Http\Request;
 
 class ModuloController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+  public function index(){                           //get: lmts.api/api/modulo
+      $aux = TipoUsuario::all();
+      $response = [];
+      foreach ($aux as $modulo) {
+        $aux = $modulo->departamento->nome;
+        $modulo->departamentoId = $aux;
+        array_push($response, [
+                                'id' => $modulo->id,
+                                'nome' => $modulo->nome,
+                                'departamento' => $modulo->departamento->nome,
+                                'campus'  => $modulo->departamento->campus->nome,
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+                              ]);
+      }
+      return response()->json($response, 201);
+  }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \lmtsApi\Modulo  $modulo
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Modulo $modulo)
-    {
-        //
-    }
+  public function store(Request $request){           //post: lmts.api/api/curso
+      $modulo = new TipoUsuario();
+      $modulo->fill($request->all());
+      $modulo->save();
+      return response()->json($modulo, 201);
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \lmtsApi\Modulo  $modulo
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Modulo $modulo)
-    {
-        //
-    }
+  public function update(Request $request, $id){     //put: lmts.api/api/curso/{id}
+      $modulo = TipoUsuario::find($id);
+      if(!$modulo) {
+          return response()->json([
+              'message'   => 'Record not found',
+          ], 404);
+      }
+      $modulo->fill($request->all());
+      $modulo->save();
+      return response()->json($modulo);
+  }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \lmtsApi\Modulo  $modulo
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Modulo $modulo)
-    {
-        //
-    }
+  public function destroy($id){                      //delete: lmts.api/api/curso/{id}
+      $modulo = TipoUsuario::find($id);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \lmtsApi\Modulo  $modulo
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Modulo $modulo)
-    {
-        //
-    }
+      if(!$modulo) {
+          return response()->json([
+              'message'   => 'Record not found',
+          ], 404);
+      }
+
+      $modulo->delete(200);
+  }
+
 }
