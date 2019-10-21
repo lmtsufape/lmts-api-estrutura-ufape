@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAcaosTable extends Migration
+class CreateUnidadeOrgs extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateAcaosTable extends Migration
      */
     public function up()
     {
-        Schema::create('acaos', function (Blueprint $table) {
+        Schema::create('unidade_orgs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('nome');
-            $table->integer('moduloId');
-            
+            $table->integer('tipoUnidadeId');
+
         });
     }
 
@@ -29,6 +29,6 @@ class CreateAcaosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('acaos');
+        Schema::dropIfExists('unidade_org');
     }
 }

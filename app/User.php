@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'tipo', 'cursoId'
+        'name', 'email', 'password', 'tipo', 'cursoId', 'tipoUsuario'
     ];
 
     /**
@@ -45,5 +45,9 @@ class User extends Authenticatable
 
     public function log(){
       return $this->hasMany('lmtsApi\Log');
+    }
+
+    public function tipoUsuario(){
+      return $this->belongsTo('lmtsApi\TipoUsuario', 'tipoUsuarioId')
     }
 }

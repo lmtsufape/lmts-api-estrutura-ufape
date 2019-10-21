@@ -8,8 +8,11 @@ class Acao extends Model
 {
     protected $fillable = ['nome', 'moduloId'];
 
-    public function tipoUser(){
-      return $this->belongsToMany('lmtsApi\User', 'acao_do_user', 'acaoId','tipoUserId')->withPivot('nivel');
+    public function tipoUsuario(){
+      return $this->belongsToMany('lmtsApi\TipoUsuario', 'acao_do_user', 'acaoId','tipoUsuarioId')->withPivot('nivel');
     }
 
+    public function modulo(){
+      return $this->belongsTo('lmtsApi\Modulo', 'moduloId');
+    }
 }

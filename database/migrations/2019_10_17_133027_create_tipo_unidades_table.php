@@ -16,6 +16,7 @@ class CreateTipoUnidadesTable extends Migration
         Schema::create('tipo_unidades', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->string('nome');
         });
     }
 
