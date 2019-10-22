@@ -7,79 +7,51 @@ use Illuminate\Http\Request;
 
 class AcaoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+  public function index(){                           //get: lmts.api/api/modulo
+      $aux = UnidadeOrg::all();
+      $response = [];
+      foreach ($aux as $acao) {
+        $aux = $acao->departamento->nome;
+        $acao->departamentoId = $aux;
+        array_push($response, [
+                                'id' => $acao->id,
+                                'nome' => $acao->nome,
+                                'departamento' => $acao->departamento->nome,
+                                'campus'  => $acao->departamento->campus->nome,
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+                              ]);
+      }
+      return response()->json($response, 201);
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+  public function store(Request $request){           //post: lmts.api/api/modulo
+      $acao = new UnidadeOrg();
+      $acao->fill($request->all());
+      $acao->save();
+      return response()->json($acao, 201);
+  }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \lmtsApi\Acao  $acao
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Acao $acao)
-    {
-        //
-    }
+  public function update(Request $request, $id){     //put: lmts.api/api/modulo/{id}
+      $acao = UnidadeOrg::find($id);
+      if(!$acao) {
+          return response()->json([
+              'message'   => 'Record not found',
+          ], 404);
+      }
+      $acao->fill($request->all());
+      $acao->save();
+      return response()->json($acao);
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \lmtsApi\Acao  $acao
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Acao $acao)
-    {
-        //
-    }
+  public function destroy($id){                      //delete: lmts.api/api/modulo/{id}
+      $acao = UnidadeOrg::find($id);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \lmtsApi\Acao  $acao
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Acao $acao)
-    {
-        //
-    }
+      if(!$acao) {
+          return response()->json([
+              'message'   => 'Record not found',
+          ], 404);
+      }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \lmtsApi\Acao  $acao
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Acao $acao)
-    {
-        //
-    }
+      $acao->delete(200);
+  }
 }

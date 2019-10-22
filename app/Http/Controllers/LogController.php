@@ -7,79 +7,64 @@ use Illuminate\Http\Request;
 
 class LogController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+  public function index(){                           //get: lmts.api/api/modulo
+      $aux = Log::all();
+      $response = [];
+      foreach ($aux as $log) {
+        $aux = $log->departamento->nome;
+        $log->departamentoId = $aux;
+        array_push($response, [
+                                'id' => $log->id,
+                                'nome' => $log->nome,
+                                'departamento' => $log->departamento->nome,
+                                'campus'  => $log->departamento->campus->nome,
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+                              ]);
+      }
+      return response()->json($response, 201);
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+  public function store(Request $request){           //post: lmts.api/api/modulo
+      $log = new Log();
+      $log->fill($request->all());
+      $log->save();
+      return response()->json($log, 201);
+  }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \lmtsApi\Log  $log
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Log $log)
-    {
-        //
-    }
+  public function update(Request $request, $id){     //put: lmts.api/api/modulo/{id}
+      $log = Log::find($id);
+      if(!$log) {
+          return response()->json([
+              'message'   => 'Record not found',
+          ], 404);
+      }
+      $log->fill($request->all());
+      $log->save();
+      return response()->json($log);
+  }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \lmtsApi\Log  $log
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Log $log)
-    {
-        //
-    }
+  public function destroy($id){                      //delete: lmts.api/api/modulo/{id}
+      $log = Log::find($id);
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \lmtsApi\Log  $log
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Log $log)
-    {
-        //
-    }
+      if(!$log) {
+          return response()->json([
+              'message'   => 'Record not found',
+          ], 404);
+      }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \lmtsApi\Log  $log
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Log $log)
-    {
-        //
-    }
+      $log->delete(200);
+  }
+
+  public function createLog($userData, $acaoData, $objData){
+    $log = new Log();
+    $log->objId = $objData['objId'];
+    $log->dataHora = $acaoData['dataHora'];
+    $log->objJson = $objData['objJson'];
+    $log->userIp = $userData['userIp'];
+    $log->userId = $objData['userId'];
+    $log->acaoId = $objData['acaoId'];    
+    $log->save();
+
+  }
+
 }

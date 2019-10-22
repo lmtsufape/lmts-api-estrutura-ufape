@@ -9,7 +9,7 @@ class ModuloController extends Controller
 {
 
   public function index(){                           //get: lmts.api/api/modulo
-      $aux = TipoUsuario::all();
+      $aux = Modulo::all();
       $response = [];
       foreach ($aux as $modulo) {
         $aux = $modulo->departamento->nome;
@@ -25,15 +25,15 @@ class ModuloController extends Controller
       return response()->json($response, 201);
   }
 
-  public function store(Request $request){           //post: lmts.api/api/curso
-      $modulo = new TipoUsuario();
+  public function store(Request $request){           //post: lmts.api/api/modulo
+      $modulo = new Modulo();
       $modulo->fill($request->all());
       $modulo->save();
       return response()->json($modulo, 201);
   }
 
-  public function update(Request $request, $id){     //put: lmts.api/api/curso/{id}
-      $modulo = TipoUsuario::find($id);
+  public function update(Request $request, $id){     //put: lmts.api/api/modulo/{id}
+      $modulo = Modulo::find($id);
       if(!$modulo) {
           return response()->json([
               'message'   => 'Record not found',
@@ -44,8 +44,8 @@ class ModuloController extends Controller
       return response()->json($modulo);
   }
 
-  public function destroy($id){                      //delete: lmts.api/api/curso/{id}
-      $modulo = TipoUsuario::find($id);
+  public function destroy($id){                      //delete: lmts.api/api/modulo/{id}
+      $modulo = Modulo::find($id);
 
       if(!$modulo) {
           return response()->json([
