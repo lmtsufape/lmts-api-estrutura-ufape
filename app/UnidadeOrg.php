@@ -12,7 +12,11 @@ class UnidadeOrg extends Model
       return $this->hasMany('lmtsApi\TipoUsuario');
     }
 
-    public function tipo(){
-      return $this->belongsTo('lmtsApi\Tipo', 'tipoUnidadeId');
+    public function tipoUnidade(){
+      return $this->belongsTo('lmtsApi\TipoUnidade', 'tipoUnidadeId');
+    }
+
+    public function subordinacao(){
+      return $this->hasMany('lmtsApi\Subordinacao', 'unidadeOrgId');
     }
 }

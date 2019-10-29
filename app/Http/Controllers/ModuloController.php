@@ -10,19 +10,8 @@ class ModuloController extends Controller
 
   public function index(){                           //get: lmts.api/api/modulo
       $aux = Modulo::all();
-      $response = [];
-      foreach ($aux as $modulo) {
-        $aux = $modulo->departamento->nome;
-        $modulo->departamentoId = $aux;
-        array_push($response, [
-                                'id' => $modulo->id,
-                                'nome' => $modulo->nome,
-                                'departamento' => $modulo->departamento->nome,
-                                'campus'  => $modulo->departamento->campus->nome,
 
-                              ]);
-      }
-      return response()->json($response, 201);
+      return response()->json($aux, 201);
   }
 
   public function store(Request $request){           //post: lmts.api/api/modulo

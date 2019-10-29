@@ -48,6 +48,6 @@ class User extends Authenticatable
     }
 
     public function tipoUsuario(){
-      return $this->belongsTo('lmtsApi\TipoUsuario', 'tipoUsuarioId')
+      return $this->belongsTo('lmtsApi\TipoUsuario', 'tipoUsuarioId');
     }
 }

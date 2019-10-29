@@ -9,19 +9,8 @@ class AcaoController extends Controller
 {
   public function index(){                           //get: lmts.api/api/modulo
       $aux = UnidadeOrg::all();
-      $response = [];
-      foreach ($aux as $acao) {
-        $aux = $acao->departamento->nome;
-        $acao->departamentoId = $aux;
-        array_push($response, [
-                                'id' => $acao->id,
-                                'nome' => $acao->nome,
-                                'departamento' => $acao->departamento->nome,
-                                'campus'  => $acao->departamento->campus->nome,
 
-                              ]);
-      }
-      return response()->json($response, 201);
+      return response()->json($aux, 201);
   }
 
   public function store(Request $request){           //post: lmts.api/api/modulo

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubordinacaosTable extends Migration
+class CreateControleDeAcessosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateSubordinacaosTable extends Migration
      */
     public function up()
     {
-        Schema::create('subordinacaos', function (Blueprint $table) {
+        Schema::create('controle_de_acessos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->integer('unidadeOrgId');
-            $table->integer('unidadeOrgIdSubordinada');
-            $table->integer('moduloId');
-
+            $table->integer('nivel');
+            $table->integer('acaoId');
+            $table->integer('tipoUsuarioId');
         });
     }
 
@@ -30,6 +29,6 @@ class CreateSubordinacaosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subordinacaos');
+        Schema::dropIfExists('controle_de_acessos');
     }
 }

@@ -35,7 +35,13 @@ class ChavesEstrangeiras extends Migration
       });
       Schema::table('subordinacaos', function (Blueprint $table) {
           $table->foreign('unidadeOrgId')->references('id')->on('unidade_orgs')->nullable();
+          $table->foreign('unidadeOrgIdSubordinada')->references('id')->on('unidade_orgs')->nullable();
+
           $table->foreign('moduloId')->references('id')->on('modulos')->nullable();
+      });
+      Schema::table('controle_de_acessos', function (Blueprint $table) {
+        $table->foreign('acaoId')->references('id')->on('acaos')->nullable();
+        $table->foreign('tipoUsuarioId')->references('id')->on('tipo_usuarios')->nullable();
       });
 
     }

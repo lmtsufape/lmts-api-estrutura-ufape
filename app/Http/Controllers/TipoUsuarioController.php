@@ -9,19 +9,8 @@ class TipoUsuarioController extends Controller
 {
   public function index(){                           //get: lmts.api/api/curso
       $aux = TipoUsuario::all();
-      $response = [];
-      foreach ($aux as $tipoUsuario) {
-        $aux = $tipoUsuario->departamento->nome;
-        $tipoUsuario->departamentoId = $aux;
-        array_push($response, [
-                                'id' => $tipoUsuario->id,
-                                'nome' => $tipoUsuario->nome,
-                                'departamento' => $tipoUsuario->departamento->nome,
-                                'campus'  => $tipoUsuario->departamento->campus->nome,
 
-                              ]);
-      }
-      return response()->json($response, 201);
+      return response()->json($aux, 201);
   }
 
   public function store(Request $request){           //post: lmts.api/api/curso

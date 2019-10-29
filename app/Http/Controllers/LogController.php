@@ -9,19 +9,8 @@ class LogController extends Controller
 {
   public function index(){                           //get: lmts.api/api/modulo
       $aux = Log::all();
-      $response = [];
-      foreach ($aux as $log) {
-        $aux = $log->departamento->nome;
-        $log->departamentoId = $aux;
-        array_push($response, [
-                                'id' => $log->id,
-                                'nome' => $log->nome,
-                                'departamento' => $log->departamento->nome,
-                                'campus'  => $log->departamento->campus->nome,
 
-                              ]);
-      }
-      return response()->json($response, 201);
+      return response()->json($aux, 201);
   }
 
   public function store(Request $request){           //post: lmts.api/api/modulo
@@ -62,7 +51,7 @@ class LogController extends Controller
     $log->objJson = $objData['objJson'];
     $log->userIp = $userData['userIp'];
     $log->userId = $objData['userId'];
-    $log->acaoId = $objData['acaoId'];    
+    $log->acaoId = $objData['acaoId'];
     $log->save();
 
   }

@@ -7,79 +7,39 @@ use Illuminate\Http\Request;
 
 class SubordinacaoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+  public function index(){                           //get: lmts.api/api/modulo
+      $aux = Subordinacao::all();
+      return response()->json($aux, 201);
+  }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+  public function store(Request $request){           //post: lmts.api/api/modulo
+      $subordinacao = new Subordinacao();
+      $subordinacao->fill($request->all());
+      $subordinacao->save();
+      return response()->json($subordinacao, 201);
+  }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+  public function update(Request $request, $id){     //put: lmts.api/api/modulo/{id}
+      $subordinacao = Subordinacao::find($id);
+      if(!$subordinacao) {
+          return response()->json([
+              'message'   => 'Record not found',
+          ], 404);
+      }
+      $subordinacao->fill($request->all());
+      $subordinacao->save();
+      return response()->json($subordinacao);
+  }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \lmtsApi\Subordinacao  $subordinacao
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Subordinacao $subordinacao)
-    {
-        //
-    }
+  public function destroy($id){                      //delete: lmts.api/api/modulo/{id}
+      $subordinacao = Subordinacao::find($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \lmtsApi\Subordinacao  $subordinacao
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Subordinacao $subordinacao)
-    {
-        //
-    }
+      if(!$subordinacao) {
+          return response()->json([
+              'message'   => 'Record not found',
+          ], 404);
+      }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \lmtsApi\Subordinacao  $subordinacao
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Subordinacao $subordinacao)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \lmtsApi\Subordinacao  $subordinacao
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Subordinacao $subordinacao)
-    {
-        //
-    }
+      $subordinacao->delete(200);
+  }
 }
