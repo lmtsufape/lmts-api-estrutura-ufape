@@ -101,6 +101,10 @@ class DatabaseSeeder extends Seeder
           'Ciências Sociais', 'Computação', 'Economia', 'Educação', 'Educação Física', 'Engenharia Agrícola',
           'Estatística e Informática', 'Física', 'História', 'Letras', 'Matemática', 'Medicina Veterinária',
           'Pesca e Aquicultura', 'Química', 'Zootecnia',
+          'Unidade Academica de Garanhuns',
+          'Unidade Academica de Serra Talhada',
+          'Unidade Academica do Cabo de Santo Agostinho',
+          'Educação a distância',
         ];
 
         for ($i=0; $i < sizeof($departamentos); $i++) {
@@ -255,22 +259,22 @@ class DatabaseSeeder extends Seeder
 
         DB::table('tipo_usuarios')->insert([  //1
           'nome' => 'PREG',
-          'unidadeOrgId' => 6,
+          // 'unidadeOrgId' => 6,
         ]);
 
         DB::table('tipo_usuarios')->insert([  //2
-          'nome' => 'coord',
-          'unidadeOrgId' => 7,
+          'nome' => 'coordenador',
+          // 'unidadeOrgId' => 7,
         ]);
 
         DB::table('tipo_usuarios')->insert([  //3
-          'nome' => 'coord geral',
-          'unidadeOrgId' => 10,
+          'nome' => 'coordenador geral',
+          // 'unidadeOrgId' => 10,
         ]);
 
         DB::table('tipo_usuarios')->insert([  //4
           'nome' => 'candidato',
-          'unidadeOrgId' => 9,
+          // 'unidadeOrgId' => 9,
         ]);
 
         //--------------------------------------------------------- Modulos
@@ -383,29 +387,38 @@ class DatabaseSeeder extends Seeder
 
         //--------------------------------------------------------- Users
 
+        $idCurso = DB::table('unidade_orgs')->where('nome', 'Bacharelado em Ciências da Computação')->first();
+
         DB::table('users')->insert([
           'name' => 'asdasd',
           'email' => 'coord@api.com',
           'password' => bcrypt('12345678'),
           'tipoUsuarioId' => 2,
+          'unidadeOrgId' => $idCurso->id,
         ]);
+
+        $idCurso = DB::table('unidade_orgs')->where('nome', 'Bacharelado em Zootecnia')->first();
+
         DB::table('users')->insert([
           'name' => 'asdasd',
           'email' => 'coord2@api.com',
           'password' => bcrypt('12345678'),
           'tipoUsuarioId' => 2,
+          'unidadeOrgId' => $idCurso->id,
         ]);
         DB::table('users')->insert([
           'name' => 'asdasd',
           'email' => 'coordUAG@api.com',
           'password' => bcrypt('12345678'),
           'tipoUsuarioId' => 3,
+          'unidadeOrgId' => 1,
         ]);
         DB::table('users')->insert([
           'name' => 'asdasd',
           'email' => 'preg@api.com',
           'password' => bcrypt('12345678'),
           'tipoUsuarioId' => 1,
+          'unidadeOrgId' => 6,
         ]);
         DB::table('users')->insert([
           'name' => 'asdasd',
@@ -417,21 +430,78 @@ class DatabaseSeeder extends Seeder
         //--------------------------------------------------------- Subordinacao
 
         for($i = 0; $i < sizeof($cursos['Unidade Academica de Garanhuns']); $i++){
-          $curso = DB::table('unidade_orgs')->where('nome', $cursos['Unidade Academica de Garanhuns'][$i])->first();
-
+          $curso = DB::table('unidade_orgs')->where('tipoUnidadeId', 5)->where('nome', $cursos['Unidade Academica de Garanhuns'][$i])->first();
+          if(empty($curso)){
+            continue;
+          }
           DB::table('subordinacaos')->insert([  //1
-            'unidadeOrgId' => 10,
+            'unidadeOrgId' => 31,
             'moduloId' => 1,
             'unidadeOrgIdSubordinada' => $curso->id,
           ]);
         }
 
+        for($i = 0; $i < sizeof($cursos['Unidade Academica de Serra Talhada']); $i++){
+          $curso = DB::table('unidade_orgs')->where('tipoUnidadeId', 5)->where('nome', $cursos['Unidade Academica de Serra Talhada'][$i])->first();
+
+          DB::table('subordinacaos')->insert([  //1
+            'unidadeOrgId' => 32,
+            'moduloId' => 1,
+            'unidadeOrgIdSubordinada' => $curso->id,
+          ]);
+        }
+
+        for($i = 0; $i < sizeof($cursos['Unidade Academica do Cabo de Santo Agostinho']); $i++){
+          $curso = DB::table('unidade_orgs')->where('tipoUnidadeId', 5)->where('nome', $cursos['Unidade Academica do Cabo de Santo Agostinho'][$i])->first();
+
+          DB::table('subordinacaos')->insert([  //1
+            'unidadeOrgId' => 33,
+            'moduloId' => 1,
+            'unidadeOrgIdSubordinada' => $curso->id,
+          ]);
+        }
+
+        // DB::table('subordinacaos')->insert([  //1
+        //   'unidadeOrgId' => 1,
+        //   'moduloId' => 1,
+        //   'unidadeOrgIdSubordinada' => 10,
+        // ]);
+
+        DB::table('subordinacaos')->insert([  //1
+          'unidadeOrgId' => 6,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 1,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //1
+          'unidadeOrgId' => 6,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 2,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //1
+          'unidadeOrgId' => 6,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 3,
+        ]);
+
         DB::table('subordinacaos')->insert([  //1
           'unidadeOrgId' => 1,
           'moduloId' => 1,
-          'unidadeOrgIdSubordinada' => 10,
+          'unidadeOrgIdSubordinada' => 31,
         ]);
 
+        DB::table('subordinacaos')->insert([  //1
+          'unidadeOrgId' => 2,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 32,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //1
+          'unidadeOrgId' => 3,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 33,
+        ]);
 
 
 

@@ -99,4 +99,16 @@ class AuthController extends Controller
     {
         return response()->json($request->user());
     }
+
+    /**
+     * Check Token
+     *
+     * @return [json]
+     */
+
+     public function check(Request $request)
+     {
+        return response()->json(['message' => 'Authorized'], 201);
+     }
+
 }

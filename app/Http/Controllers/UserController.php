@@ -8,10 +8,15 @@ use lmtsApi\User;
 class UserController extends Controller
 {
     public function getDados(Request $request, $email){
-      $user = User::where('email',$email)
-                    ->select(array('id', 'email', 'cursoId', 'tipo'))
-                    ->get();
-      return response()->json($user, 201);
+      $user = User::where('email',$email)->first();
+      $response = [];
+      array_push($response, [
+                            'id'      => $user->id,
+                            'email'   => $user->email,
+                            'cursoId' => $user->cursoId,
+                            'tipo'    => $user->tipoUsuario->nome,
+                          ]);
+      return response()->json($response, 201);
     }
 
     public function getEmailsCoordenadorPorCurso(Request $request, $idCurso){

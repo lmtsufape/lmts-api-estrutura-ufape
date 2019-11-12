@@ -13,6 +13,16 @@ use Illuminate\Http\Request;
 |
 */
 
+/*
+Headers neceessarios
+
+'Content-Type' => 'application/json',
+'X-Requested-With' => 'XMLHttpRequest'
+
+*/
+
+
+
 Route::group([
     'prefix' => 'auth'
 
@@ -28,18 +38,27 @@ Route::group([
     });
 });
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-/////////////////////////////
-Route::get('/', function () {
-      return response()->json(['message' => 'LMTS API', 'status' => 'Connected']);;
-  })->middleware('auth:api');
-Route::get('/curso',                                                          'CursoController@index');
-Route::post('/curso',                                                         'CursoController@store');
-Route::put('/curso/{id}',                                                     'CursoController@update');
-Route::delete('/curso/{id}',                                                  'CursoController@destroy');
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+//------------------------------------- API antiga
+// Route::get('/', function () {
+//       return response()->json(['message' => 'LMTS API', 'status' => 'Connected']);;
+//   })->middleware('auth:api');
+Route::get('/curso',                                        'CursoController@index')->middleware('auth:api');
+Route::post('/curso',                                       'CursoController@store');
+Route::put('/curso/{id}',                                   'CursoController@update');
+Route::delete('/curso/{id}',                                'CursoController@destroy');
 
-Route::get('/usuario/getDados/{email}',                           'UserController@getDados'                     )->middleware('auth:api');
-Route::get('/usuario/coordenador/getEmails/{idCurso}',                        'UserController@getEmailsCoordenadorPorCurso' );
-Route::get('/usuario/preg/getEmails',                                         'UserController@getEmailsPreg'                );
+Route::get('/usuario/getDados/{email}',                     'UserController@getDados'                     )->middleware('auth:api');
+Route::get('/usuario/coordenador/getEmails/{idCurso}',      'UserController@getEmailsCoordenadorPorCurso' );
+Route::get('/usuario/preg/getEmails',                       'UserController@getEmailsPreg'                );
+
+Route::get('/check',                                        'AuthController@check'                        )->middleware('auth:api');
+
+
+
+
+
+// Route::get('/{modulo}/getEmail/{raiz}/{tipoUsuario}',       'ModuloController@getEmailRaizTipoUsuario'    );
+Route::get('/{modulo}/getUnidades/{raiz}/{tipoUnidade}',    'ModuloController@getUnidadesRaizTipoUnidade' );

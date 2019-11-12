@@ -16,6 +16,7 @@ class ChavesEstrangeiras extends Migration
       Schema::table('users', function (Blueprint $table) {
           $table->foreign('cursoId')->references('id')->on('cursos')->nullable();
           $table->foreign('tipoUsuarioId')->references('id')->on('tipo_usuarios')->nullable();
+          $table->foreign('unidadeOrgId')->references('id')->on('unidade_orgs')->nullable();
       });
       Schema::table('cursos', function (Blueprint $table) {
           $table->foreign('departamentoId')->references('id')->on('departamentos')->nullable();
