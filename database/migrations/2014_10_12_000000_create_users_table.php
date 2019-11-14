@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->integer('cursoId')->nullable();
             $table->timestamps();
             $table->integer('tipoUsuarioId')->nullable();
+            $table->integer('unidadeOrgId')->nullable();
         });
     }
 

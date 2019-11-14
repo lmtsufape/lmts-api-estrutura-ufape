@@ -12,7 +12,10 @@ class TipoUsuario extends Model
       return $this->belongsToMany('lmtsApi\Acao', 'acao_do_user', 'acaoId','tipoUsuarioId')->withPivot('nivel');
     }
 
-    public function unidadeOrg(){
-      return $this->belongsTo('lmtsApi\UnidadeOrg', 'unidadeOrgId');
+    // public function unidadeOrg(){
+    //   return $this->belongsTo('lmtsApi\UnidadeOrg', 'unidadeOrgId');
+    // }
+    public function user(){
+      return $this->hasOne('lmtsApi\User');
     }
 }

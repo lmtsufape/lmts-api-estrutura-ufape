@@ -17,8 +17,8 @@ class CreateTipoUsuariosTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('nome');
-            $table->integer('unidadeOrgId');
-          
+            $table->integer('unidadeOrgId')->nullable();
+
         });
     }
 

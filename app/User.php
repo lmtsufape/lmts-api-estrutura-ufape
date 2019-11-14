@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'tipo', 'cursoId', 'tipoUsuario'
+        'name', 'email', 'password', 'tipo', 'cursoId', 'tipoUsuario', 'unidadeOrgId'
     ];
 
     /**
@@ -49,5 +49,9 @@ class User extends Authenticatable
 
     public function tipoUsuario(){
       return $this->belongsTo('lmtsApi\TipoUsuario', 'tipoUsuarioId');
+    }
+
+    public function unidadeOrg(){
+      return $this->belongsTo('lmtsApi\UnidadeOrg', 'unidadeOrgId');
     }
 }
