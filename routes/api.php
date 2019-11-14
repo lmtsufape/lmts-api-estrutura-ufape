@@ -62,3 +62,5 @@ Route::get('/check',                                        'AuthController@chec
 
 // Route::get('/{modulo}/getEmail/{raiz}/{tipoUsuario}',       'ModuloController@getEmailRaizTipoUsuario'    );
 Route::get('/{modulo}/getUnidades/{raiz}/{tipoUnidade}',    'ModuloController@getUnidadesRaizTipoUnidade' );
+
+Route::get('/{modulo}/getAcl/{tipoUsuario}',                'ControleDeAcessoController@getAcl');

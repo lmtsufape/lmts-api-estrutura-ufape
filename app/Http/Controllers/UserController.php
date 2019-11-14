@@ -11,10 +11,11 @@ class UserController extends Controller
       $user = User::where('email',$email)->first();
       $response = [];
       array_push($response, [
-                            'id'      => $user->id,
-                            'email'   => $user->email,
-                            'cursoId' => $user->cursoId,
-                            'tipo'    => $user->tipoUsuario->nome,
+                            'id'           => $user->id,
+                            'email'        => $user->email,
+                            'cursoId'      => $user->cursoId,
+                            'tipo'         => $user->tipoUsuario->nome,
+                            'tipoUsuario' => $user->tipoUsuario->id,
                           ]);
       return response()->json($response, 201);
     }
