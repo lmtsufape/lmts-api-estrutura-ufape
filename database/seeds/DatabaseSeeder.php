@@ -277,6 +277,11 @@ class DatabaseSeeder extends Seeder
           // 'unidadeOrgId' => 9,
         ]);
 
+        DB::table('tipo_usuarios')->insert([  //5
+          'nome' => 'DRCA',
+          // 'unidadeOrgId' => 9,
+        ]);
+
         //--------------------------------------------------------- Modulos
 
         DB::table('modulos')->insert([  //1
@@ -424,7 +429,8 @@ class DatabaseSeeder extends Seeder
           'name' => 'asdasd',
           'email' => 'drca@api.com',
           'password' => bcrypt('12345678'),
-          'tipoUsuarioId' => 1,
+          'tipoUsuarioId' => 5,
+          'unidadeOrgId' => 6,
         ]);
 
         //--------------------------------------------------------- Subordinacao
