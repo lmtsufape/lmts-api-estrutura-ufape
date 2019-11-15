@@ -96,14 +96,191 @@ class DatabaseSeeder extends Seeder
           'tipoUnidadeId' => 4,
         ]);
 
+        //--------------------------------------------------------- cursos UAG
+
+        DB::table('unidade_orgs')->insert([ //11
+          'nome' => 'Bacharelado em Agronomia',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //12
+          'nome' => 'Bacharelado em Ciências da Computação',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //13
+          'nome' => 'Bacharelado em Zootecnia',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //14
+          'nome' => 'Engenharia de Alimentos',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //15
+          'nome' => 'Licenciatura em Letras',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //16
+          'nome' => 'Licenciatura em Pedagogia',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //17
+          'nome' => 'Medicina Veterinária',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        //--------------------------------------------------------- cursos UAST
+
+        DB::table('unidade_orgs')->insert([ //18
+          'nome' => 'Bacharelado em Ciências Biológicas',
+          'tipoUnidadeId' => 5,
+        ]);
+        DB::table('unidade_orgs')->insert([ //19
+          'nome' => 'Bacharelado em Ciências Econômicas',
+          'tipoUnidadeId' => 5,
+        ]);
+        DB::table('unidade_orgs')->insert([ //20
+          'nome' => 'Bacharelado em Sistemas de Informação',
+          'tipoUnidadeId' => 5,
+        ]);
+        DB::table('unidade_orgs')->insert([ //21
+          'nome' => 'Bacharelado em Agronomia',
+          'tipoUnidadeId' => 5,
+        ]);
+        DB::table('unidade_orgs')->insert([ //22
+          'nome' => 'Bacharelado em Engenharia de Pesca',
+          'tipoUnidadeId' => 5,
+        ]);
+        DB::table('unidade_orgs')->insert([ //23
+          'nome' => 'Licenciatura em Química',
+          'tipoUnidadeId' => 5,
+        ]);
+        DB::table('unidade_orgs')->insert([ //24
+          'nome' => 'Licenciatura em Letras',
+          'tipoUnidadeId' => 5,
+        ]);
+        DB::table('unidade_orgs')->insert([ //25
+          'nome' => 'Bacharelado em Administração',
+          'tipoUnidadeId' => 5,
+        ]);
+        DB::table('unidade_orgs')->insert([ //26
+          'nome' => 'Bacharelado em Zootecnia',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        //--------------------------------------------------------- cursos UACSA
+
+        DB::table('unidade_orgs')->insert([ //27
+          'nome' => 'Engenharia Civil',
+          'tipoUnidadeId' => 5,
+        ]);
+        DB::table('unidade_orgs')->insert([ //28
+          'nome' => 'Engenharia de Materiais',
+          'tipoUnidadeId' => 5,
+        ]);
+        DB::table('unidade_orgs')->insert([ //29
+          'nome' => 'Engenharia Elétrica',
+          'tipoUnidadeId' => 5,
+        ]);
+        DB::table('unidade_orgs')->insert([ //30
+          'nome' => 'Engenharia Eletrônica',
+          'tipoUnidadeId' => 5,
+        ]);
+        DB::table('unidade_orgs')->insert([ //31
+          'nome' => 'Engenharia Mecânica',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        $cursos = [ 'Unidade Academica de Garanhuns'                => [
+                                                                        'Bacharelado em Agronomia',
+                                                                        'Bacharelado em Ciências da Computação',
+                                                                        'Bacharelado em Zootecnia',
+                                                                        'Engenharia de Alimentos',
+                                                                        'Licenciatura em Letras',
+                                                                        'Licenciatura em Pedagogia',
+                                                                        'Medicina Veterinária',
+                                                                      ],
+                    'Unidade Academica de Serra Talhada'            => [
+                                                                        'Bacharelado em Ciências Biológicas',
+                                                                        'Bacharelado em Ciências Econômicas',
+                                                                        'Bacharelado em Sistemas de Informação',
+                                                                        'Bacharelado em Agronomia',
+                                                                        'Bacharelado em Engenharia de Pesca',
+                                                                        'Licenciatura em Química',
+                                                                        'Licenciatura em Letras',
+                                                                        'Bacharelado em Administração',
+                                                                        'Bacharelado em Zootecnia',
+                                                                      ],
+                    'Unidade Academica do Cabo de Santo Agostinho' => [
+                                                                        'Engenharia Civil',
+                                                                        'Engenharia de Materiais',
+                                                                        'Engenharia Elétrica',
+                                                                        'Engenharia Eletrônica',
+                                                                        'Engenharia Mecânica',
+
+                                                                      ],
+                    'Educação a distância'                          => [
+                                                                        'Bacharelado em Administração Pública',
+                                                                        'Bacharelado em Sistemas da Informação',
+                                                                        'Licenciatura em Artes Visuais com ênfase em Digitais',
+                                                                        'Licenciatura em Computação',
+                                                                        'Licenciatura em Física',
+                                                                        'Licenciatura em História',
+                                                                        'Licenciatura Interdisciplinar em Ciências Naturais',
+                                                                        'Licenciatura em Letras',
+                                                                        'Licenciatura em Pedagogia',
+                                                                      ],
+                      'Administração'                                 => ['Administração'],
+                      'Agronomia'                                     => ['Agronomia'],
+                      'Biologia'                                      => ['Licenciatura em Ciências Biológicas'],
+                      'Ciência Florestal'                             => ['Engenharia Florestal'],
+                      'Ciências do Consumo'                           => ['Bacharelado em Ciências do Consumo'],
+                      'Ciências Sociais'                              => ['Bacharelado em Ciências Sociais'],
+                      'Computação'                                    => [
+                                                                        'Bacharelado em Ciência da Computação',
+                                                                        'Licenciatura em Computação'
+                                                                      ],
+                      'Economia'                                      => ['Bacharelado em Ciências Econômicas'],
+                      'Educação'                                      => ['Licenciatura em Pedagogia'],
+                      'Educação Física'                               => ['Licenciatura em Educação Física'],
+                      'Engenharia Agrícola'                           => ['Engenharia Agrícola e Ambiental'],
+                      'Estatística e Informática'                     => ['Bacharelado em Sistemas da Informação'],
+                      'Física'                                        => ['Licenciatura em Física'],
+                      'História'                                      => ['Licenciatura em História'],
+                      'Letras'                                        => ['Licenciatura em Letras (Português e Espanhol)'],
+                      'Matemática'                                    => ['Licenciatura em Matemática'],
+                      'Medicina Veterinária'                          => ['Medicina Veterinária'],
+                      'Pesca e Aquicultura'                           => ['Engenharia de Pesca'],
+                      'Química'                                       => ['Licenciatura em Química'],
+                      'Zootecnia'                                     => ['Zootecnia'],
+
+        ];
+
+        // for($i = 0; $i < sizeof($cursosApi); $i++){
+        //   for($j = 0; $j < sizeof($cursosApi[$i]); $j++){
+        //     $aux = UnidadeOrg::where('nome', $cursosApi[$i][$j])->get();
+        //     if($aux->count() == 0){
+        //       DB::table('unidade_orgs')->insert([
+        //       'nome' => $cursosApi[$i][$j],
+        //       'tipoUnidadeId' => 5,
+        //       ]);
+        //     }
+        //   }
+        // }
+
+
         $departamentos = [
+          'Unidade Academica de Garanhuns',
+          'Unidade Academica de Serra Talhada',
+          'Unidade Academica do Cabo de Santo Agostinho',
           'Administração', 'Agronomia', 'Biologia', 'Ciência Florestal', 'Ciências do Consumo',
           'Ciências Sociais', 'Computação', 'Economia', 'Educação', 'Educação Física', 'Engenharia Agrícola',
           'Estatística e Informática', 'Física', 'História', 'Letras', 'Matemática', 'Medicina Veterinária',
           'Pesca e Aquicultura', 'Química', 'Zootecnia',
-          'Unidade Academica de Garanhuns',
-          'Unidade Academica de Serra Talhada',
-          'Unidade Academica do Cabo de Santo Agostinho',
           'Educação a distância',
         ];
 
@@ -178,82 +355,6 @@ class DatabaseSeeder extends Seeder
             ['Zootecnia'],
             ];
 
-      $cursos = [ 'Unidade Academica de Garanhuns'                => [
-        'Bacharelado em Agronomia',
-        'Bacharelado em Ciências da Computação',
-        'Bacharelado em Zootecnia',
-        'Engenharia de Alimentos',
-        'Licenciatura em Letras',
-        'Licenciatura em Pedagogia',
-        'Medicina Veterinária',
-        ],
-        'Unidade Academica de Serra Talhada'            => [
-        'Bacharelado em Ciências Biológicas',
-        'Bacharelado em Ciências Econômicas',
-        'Bacharelado em Sistemas de Informação',
-        'Bacharelado em Agronomia',
-        'Bacharelado em Engenharia de Pesca',
-        'Licenciatura em Química',
-        'Licenciatura em Letras',
-        'Bacharelado em Administração',
-        'Bacharelado em Zootecnia',
-        ],
-        'Unidade Academica do Cabo de Santo Agostinho' => [
-        'Engenharia Civil',
-        'Engenharia de Materiais',
-        'Engenharia Elétrica',
-        'Engenharia Eletrônica',
-        'Engenharia Mecânica',
-
-        ],
-        'Educação a distância'                          => [
-        'Bacharelado em Administração Pública',
-        'Bacharelado em Sistemas da Informação',
-        'Licenciatura em Artes Visuais com ênfase em Digitais',
-        'Licenciatura em Computação',
-        'Licenciatura em Física',
-        'Licenciatura em História',
-        'Licenciatura Interdisciplinar em Ciências Naturais',
-        'Licenciatura em Letras',
-        'Licenciatura em Pedagogia',
-        ],
-        'Administração'                                 => ['Administração'],
-        'Agronomia'                                     => ['Agronomia'],
-        'Biologia'                                      => ['Licenciatura em Ciências Biológicas'],
-        'Ciência Florestal'                             => ['Engenharia Florestal'],
-        'Ciências do Consumo'                           => ['Bacharelado em Ciências do Consumo'],
-        'Ciências Sociais'                              => ['Bacharelado em Ciências Sociais'],
-        'Computação'                                    => [
-        'Bacharelado em Ciência da Computação',
-        'Licenciatura em Computação'
-        ],
-        'Economia'                                      => ['Bacharelado em Ciências Econômicas'],
-        'Educação'                                      => ['Licenciatura em Pedagogia'],
-        'Educação Física'                               => ['Licenciatura em Educação Física'],
-        'Engenharia Agrícola'                           => ['Engenharia Agrícola e Ambiental'],
-        'Estatística e Informática'                     => ['Bacharelado em Sistemas da Informação'],
-        'Física'                                        => ['Licenciatura em Física'],
-        'História'                                      => ['Licenciatura em História'],
-        'Letras'                                        => ['Licenciatura em Letras (Português e Espanhol)'],
-        'Matemática'                                    => ['Licenciatura em Matemática'],
-        'Medicina Veterinária'                          => ['Medicina Veterinária'],
-        'Pesca e Aquicultura'                           => ['Engenharia de Pesca'],
-        'Química'                                       => ['Licenciatura em Química'],
-        'Zootecnia'                                     => ['Zootecnia'],
-
-      ];
-
-        for($i = 0; $i < sizeof($cursosApi); $i++){
-          for($j = 0; $j < sizeof($cursosApi[$i]); $j++){
-            $aux = UnidadeOrg::where('nome', $cursosApi[$i][$j])->get();
-            if($aux->count() == 0){
-              DB::table('unidade_orgs')->insert([
-              'nome' => $cursosApi[$i][$j],
-              'tipoUnidadeId' => 5,
-              ]);
-            }
-          }
-        }
 
         //--------------------------------------------------------- Tipo de Usuarios
 
@@ -392,24 +493,20 @@ class DatabaseSeeder extends Seeder
 
         //--------------------------------------------------------- Users
 
-        $idCurso = DB::table('unidade_orgs')->where('nome', 'Bacharelado em Ciências da Computação')->first();
-
         DB::table('users')->insert([
           'name' => 'asdasd',
           'email' => 'coord@api.com',
           'password' => bcrypt('12345678'),
           'tipoUsuarioId' => 2,
-          'unidadeOrgId' => $idCurso->id,
+          'unidadeOrgId' => 11,
         ]);
-
-        $idCurso = DB::table('unidade_orgs')->where('nome', 'Bacharelado em Zootecnia')->first();
 
         DB::table('users')->insert([
           'name' => 'asdasd',
           'email' => 'coord2@api.com',
           'password' => bcrypt('12345678'),
           'tipoUsuarioId' => 2,
-          'unidadeOrgId' => $idCurso->id,
+          'unidadeOrgId' => 12,
         ]);
         DB::table('users')->insert([
           'name' => 'asdasd',
@@ -435,35 +532,27 @@ class DatabaseSeeder extends Seeder
 
         //--------------------------------------------------------- Subordinacao
 
-        for($i = 0; $i < sizeof($cursos['Unidade Academica de Garanhuns']); $i++){
-          $curso = DB::table('unidade_orgs')->where('tipoUnidadeId', 5)->where('nome', $cursos['Unidade Academica de Garanhuns'][$i])->first();
-          if(empty($curso)){
-            continue;
-          }
-          DB::table('subordinacaos')->insert([  //1
-            'unidadeOrgId' => 31,
-            'moduloId' => 1,
-            'unidadeOrgIdSubordinada' => $curso->id,
-          ]);
-        }
-
-        for($i = 0; $i < sizeof($cursos['Unidade Academica de Serra Talhada']); $i++){
-          $curso = DB::table('unidade_orgs')->where('tipoUnidadeId', 5)->where('nome', $cursos['Unidade Academica de Serra Talhada'][$i])->first();
-
+        for($i = 11; $i < 18; $i++){
           DB::table('subordinacaos')->insert([  //1
             'unidadeOrgId' => 32,
             'moduloId' => 1,
-            'unidadeOrgIdSubordinada' => $curso->id,
+            'unidadeOrgIdSubordinada' => $i,
           ]);
         }
 
-        for($i = 0; $i < sizeof($cursos['Unidade Academica do Cabo de Santo Agostinho']); $i++){
-          $curso = DB::table('unidade_orgs')->where('tipoUnidadeId', 5)->where('nome', $cursos['Unidade Academica do Cabo de Santo Agostinho'][$i])->first();
-
-          DB::table('subordinacaos')->insert([  //1
+        for($i = 18; $i < 27; $i++){
+          DB::table('subordinacaos')->insert([  //2
             'unidadeOrgId' => 33,
             'moduloId' => 1,
-            'unidadeOrgIdSubordinada' => $curso->id,
+            'unidadeOrgIdSubordinada' => $i,
+          ]);
+        }
+
+        for($i = 27; $i < 32; $i++){
+          DB::table('subordinacaos')->insert([  //3
+            'unidadeOrgId' => 34,
+            'moduloId' => 1,
+            'unidadeOrgIdSubordinada' => $i,
           ]);
         }
 
@@ -494,19 +583,19 @@ class DatabaseSeeder extends Seeder
         DB::table('subordinacaos')->insert([  //1
           'unidadeOrgId' => 1,
           'moduloId' => 1,
-          'unidadeOrgIdSubordinada' => 31,
+          'unidadeOrgIdSubordinada' => 32,
         ]);
 
         DB::table('subordinacaos')->insert([  //1
           'unidadeOrgId' => 2,
           'moduloId' => 1,
-          'unidadeOrgIdSubordinada' => 32,
+          'unidadeOrgIdSubordinada' => 33,
         ]);
 
         DB::table('subordinacaos')->insert([  //1
           'unidadeOrgId' => 3,
           'moduloId' => 1,
-          'unidadeOrgIdSubordinada' => 33,
+          'unidadeOrgIdSubordinada' => 34,
         ]);
 
 
