@@ -274,9 +274,9 @@ class DatabaseSeeder extends Seeder
 
 
         $departamentos = [
-          'Unidade Academica de Garanhuns',
-          'Unidade Academica de Serra Talhada',
-          'Unidade Academica do Cabo de Santo Agostinho',
+          'Unidade Acadêmica de Garanhuns',
+          'Unidade Acadêmica de Serra Talhada',
+          'Unidade Acadêmica do Cabo de Santo Agostinho',
           'Administração', 'Agronomia', 'Biologia', 'Ciência Florestal', 'Ciências do Consumo',
           'Ciências Sociais', 'Computação', 'Economia', 'Educação', 'Educação Física', 'Engenharia Agrícola',
           'Estatística e Informática', 'Física', 'História', 'Letras', 'Matemática', 'Medicina Veterinária',
