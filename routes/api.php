@@ -51,7 +51,6 @@ Route::put('/curso/{id}',                                   'CursoController@upd
 Route::delete('/curso/{id}',                                'CursoController@destroy');
 
 Route::get('/usuario/getDados/{email}',                     'UserController@getDados'                     )->middleware('auth:api');
-Route::get('/usuario/coordenador/getEmails/{idCurso}',      'UserController@getEmailsCoordenadorPorCurso' );
 Route::get('/usuario/preg/getEmails',                       'UserController@getEmailsPreg'                );
 
 Route::get('/check',                                        'AuthController@check'                        )->middleware('auth:api');
@@ -59,8 +58,6 @@ Route::get('/check',                                        'AuthController@chec
 
 
 
-
-// Route::get('/{modulo}/getEmail/{raiz}/{tipoUsuario}',       'ModuloController@getEmailRaizTipoUsuario'    );
+Route::get('/getEmails/{idUnidade}',                        'UserController@getEmailsPorUnidade' );
 Route::get('/{modulo}/getUnidades/{raiz}/{tipoUnidade}',    'ModuloController@getUnidadesRaizTipoUnidade' );
-
 Route::get('/{modulo}/getAcl/{tipoUsuario}',                'ControleDeAcessoController@getAcl');

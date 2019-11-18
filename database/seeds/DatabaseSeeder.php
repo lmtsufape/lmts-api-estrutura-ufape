@@ -360,27 +360,22 @@ class DatabaseSeeder extends Seeder
 
         DB::table('tipo_usuarios')->insert([  //1
           'nome' => 'PREG',
-          // 'unidadeOrgId' => 6,
         ]);
 
         DB::table('tipo_usuarios')->insert([  //2
           'nome' => 'coordenador',
-          // 'unidadeOrgId' => 7,
         ]);
 
         DB::table('tipo_usuarios')->insert([  //3
           'nome' => 'coordenador geral',
-          // 'unidadeOrgId' => 10,
         ]);
 
         DB::table('tipo_usuarios')->insert([  //4
           'nome' => 'candidato',
-          // 'unidadeOrgId' => 9,
         ]);
 
         DB::table('tipo_usuarios')->insert([  //5
           'nome' => 'DRCA',
-          // 'unidadeOrgId' => 9,
         ]);
 
         //--------------------------------------------------------- Modulos
@@ -556,43 +551,37 @@ class DatabaseSeeder extends Seeder
           ]);
         }
 
-        // DB::table('subordinacaos')->insert([  //1
-        //   'unidadeOrgId' => 1,
-        //   'moduloId' => 1,
-        //   'unidadeOrgIdSubordinada' => 10,
-        // ]);
-
-        DB::table('subordinacaos')->insert([  //1
+        DB::table('subordinacaos')->insert([  //4
           'unidadeOrgId' => 6,
           'moduloId' => 1,
           'unidadeOrgIdSubordinada' => 1,
         ]);
 
-        DB::table('subordinacaos')->insert([  //1
+        DB::table('subordinacaos')->insert([  //5
           'unidadeOrgId' => 6,
           'moduloId' => 1,
           'unidadeOrgIdSubordinada' => 2,
         ]);
 
-        DB::table('subordinacaos')->insert([  //1
+        DB::table('subordinacaos')->insert([  //6
           'unidadeOrgId' => 6,
           'moduloId' => 1,
           'unidadeOrgIdSubordinada' => 3,
         ]);
 
-        DB::table('subordinacaos')->insert([  //1
+        DB::table('subordinacaos')->insert([  //7
           'unidadeOrgId' => 1,
           'moduloId' => 1,
           'unidadeOrgIdSubordinada' => 32,
         ]);
 
-        DB::table('subordinacaos')->insert([  //1
+        DB::table('subordinacaos')->insert([  //8
           'unidadeOrgId' => 2,
           'moduloId' => 1,
           'unidadeOrgIdSubordinada' => 33,
         ]);
 
-        DB::table('subordinacaos')->insert([  //1
+        DB::table('subordinacaos')->insert([  //9
           'unidadeOrgId' => 3,
           'moduloId' => 1,
           'unidadeOrgIdSubordinada' => 34,

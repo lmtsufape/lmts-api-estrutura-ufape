@@ -16,6 +16,6 @@ class TipoUsuario extends Model
     //   return $this->belongsTo('lmtsApi\UnidadeOrg', 'unidadeOrgId');
     // }
     public function user(){
-      return $this->hasOne('lmtsApi\User');
+      return $this->hasOne('lmtsApi\User', 'tipoUsuarioId');
     }
 }

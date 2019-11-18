@@ -4,6 +4,7 @@ namespace lmtsApi\Http\Controllers;
 
 use Illuminate\Http\Request;
 use lmtsApi\User;
+use lmtsApi\UnidadeOrg;
 
 class UserController extends Controller
 {
@@ -35,5 +36,21 @@ class UserController extends Controller
                     ->get();
       return response()->json($user, 201);
     }
+
+    public function getEmailsPorUnidade(Request $request, $idUnidade){
+      $unidade = UnidadeOrg::find($idUnidade);
+      if(empty($unidade)){
+        return response()->json('Não encontrado',404);
+      }
+      $usuarios = $unidade->user;
+      $response = [];
+      foreach ($usuarios as $key) {
+        array_push($response, $key->email);
+      }
+      return response()->json($response, 201);
+
+
+    }
+
 
 }

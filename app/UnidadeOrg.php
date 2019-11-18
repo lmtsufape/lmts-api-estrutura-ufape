@@ -13,7 +13,7 @@ class UnidadeOrg extends Model
     }
 
     public function user(){
-      return $this->hasMany('lmtsApi\User');
+      return $this->hasMany('lmtsApi\User', 'unidadeOrgId');
     }
 
     public function tipoUnidade(){
