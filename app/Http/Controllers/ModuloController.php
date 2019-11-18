@@ -50,7 +50,7 @@ class ModuloController extends Controller
   private function recursaoGetUnidadesRaizTipoUnidade($modulo, $raiz, $tipoUnidade){
       $unidade = UnidadeOrg::find($raiz);
       if($unidade->tipoUnidade->id == $tipoUnidade){
-        return 'id:' . $unidade->id . ',';
+        return $unidade->id . ',';
       }
       else{
         $subordinadas = Subordinacao::where('unidadeOrgId', $raiz)->where('moduloId', $modulo)->get();
@@ -58,15 +58,30 @@ class ModuloController extends Controller
         foreach ($subordinadas as $key) {
           array_push($ids, $key->unidadeOrgIdSubordinada);
         }
-        $response = 'id:' . $raiz . '>';
-        // dd($subordinadas);
+        $response = '';
         foreach ($ids as $key) {
           $response = $response . $this->recursaoGetUnidadesRaizTipoUnidade($modulo, $key, $tipoUnidade);
         }
-        $response = $response . '!';
         return $response;
       }
   }
+
+  private function recursaoGetPaisPorFolha($modulo, $raiz, $folha){
+    $unidade = UnidadeOrg::find($folha);
+    if($unidade->id == $raiz){
+      return $unidade->id . ',';
+    }
+    else{
+      $response = $folha . ',';
+      $pai = Subordinacao::where('unidadeOrgIdSubordinada', $folha)->where('moduloId', $modulo)->first();
+      if($pai->unidadeOrgId == $raiz){
+        return $response . ',';
+      }
+      $response = $response . $this->recursaoGetPaisPorFolha($modulo, $raiz, $pai->unidadeOrgId);
+      return $response;
+    }
+  }
+
 
 
   public function getUnidadesRaizTipoUnidade($modulo, $raiz, $tipoUnidade){
@@ -75,49 +90,36 @@ class ModuloController extends Controller
         return response()->json($unidadeRaiz);
       }
       $stringResponse = $this->recursaoGetUnidadesRaizTipoUnidade($modulo, $raiz, $tipoUnidade);
-      $stringResponse = str_replace('id:' . $raiz . '>', '', $stringResponse);
-      $stringResponse = explode('!', $stringResponse);
-      $ids = [];
-      for($i = 0; $i < (sizeof($stringResponse)-2); $i++){
-        if($stringResponse[$i] == ('id:' . $raiz . '>')){
-          continue;
+      $stringResponse = explode(',', $stringResponse);
+      $response = [];
+      $aux = [];
+      $aux1 = [];
+      for($i = 0; $i < sizeof($stringResponse) - 1; $i++) {
+        $aux1 = [];
+        $aux = $this->recursaoGetPaisPorFolha($modulo, $raiz, $stringResponse[$i]);
+        $aux = explode(',', $aux);
+        foreach ($aux as $key) {
+          if($key != ''){
+            array_push($aux1, $key);
+          }
         }
-        array_push($ids, $stringResponse[$i]);
-      }
-      for($i = 0; $i < sizeof($ids); $i++) {
-        $ids[$i] = explode('>', $ids[$i]);
-      }
-      for($i = 0; $i < sizeof($ids); $i++) {
-        for($j = 0; $j < sizeof($ids[$i]); $j++) {
-          $ids[$i][$j] = explode(',', $ids[$i][$j]);
-        }
+        array_push($response, $aux1);
       }
       $aux = [];
-      for($i = 0; $i < sizeof($ids); $i++) {
-        if($ids[$i][0][0] != ''){
-          array_push($aux, $ids[$i]);
-        }
-      }
-      $ids = $aux;
-      for($i = 0; $i < sizeof($ids); $i++) {
-        for($j = 0; $j < sizeof($ids[$i]); $j++) {
-          for($k = 0; $k < sizeof($ids[$i][$j]); $k++) {
-            if($ids[$i][$j][$k] != ''){
-              $aux = [];
-              $idAux = explode(':', $ids[$i][$j][$k]);
-              $unidadeAux = UnidadeOrg::find($idAux[1]);
-              array_push($aux, [
-                                'id' => $unidadeAux->id,
-                                'nome' => $unidadeAux->nome,
-                                'tipoUnidade' => $unidadeAux->tipoUnidade->nome,
-                               ]);
-              $ids[$i][$j][$k] = $aux;
-            }
-          }
+      $aux1 = [];
+      for($i = 0; $i < sizeof($response); $i++) {
+        for($j = 0; $j < sizeof($response[$i]); $j++) {
+          $aux = UnidadeOrg::find($response[$i][$j]);
+          $response[$i][$j] = [
+                                'id' => $aux->id,
+                                'nome' => $aux->nome,
+                                'tipoUnidade' => $aux->tipoUnidade->nome,
+                              ];
         }
       }
 
-      return response()->json($ids, 200);
+
+      return response()->json($response, 200);
 
 
   }

@@ -62,12 +62,12 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('unidade_orgs')->insert([ //4
-          'nome' => 'SEDE',
+          'nome' => 'Educação a distância',
           'tipoUnidadeId' => 2,
         ]);
 
         DB::table('unidade_orgs')->insert([ //5
-          'nome' => 'Educação a distância',
+          'nome' => 'SEDE',
           'tipoUnidadeId' => 2,
         ]);
 
@@ -195,6 +195,283 @@ class DatabaseSeeder extends Seeder
           'tipoUnidadeId' => 5,
         ]);
 
+        //--------------------------------------------------------- cursos EAD
+
+        DB::table('unidade_orgs')->insert([ //32
+          'nome' => 'Bacharelado em Administração Pública',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //33
+          'nome' => 'Bacharelado em Sistemas da Informação',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //34
+          'nome' => 'Licenciatura em Artes Visuais com ênfase em Digitais',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //35
+          'nome' => 'Licenciatura em Computação',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //36
+          'nome' => 'Licenciatura em Física',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //37
+          'nome' => 'Licenciatura em História',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //38
+          'nome' => 'Licenciatura Interdisciplinar em Ciências Naturais',
+          'tipoUnidadeId' => 5,
+        ]);
+
+
+        DB::table('unidade_orgs')->insert([ //39
+          'nome' => 'Licenciatura em Letras',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //40
+          'nome' => 'Licenciatura em Pedagogia',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        //--------------------------------------------------------- cursos SEDE
+
+        DB::table('unidade_orgs')->insert([ //41
+          'nome' => 'Administração',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //42
+          'nome' => 'Agronomia',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //43
+          'nome' => 'Licenciatura em Ciências Biológicas',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //44
+          'nome' => 'Engenharia Florestal',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //45
+          'nome' => 'Bacharelado em Ciências do Consumo',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //46
+          'nome' => 'Bacharelado em Ciências Sociais',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //47
+          'nome' => 'Bacharelado em Ciência da Computação',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //48
+          'nome' => 'Licenciatura em Computação',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //49
+          'nome' => 'Bacharelado em Ciências Econômicas',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //50
+          'nome' => 'Licenciatura em Pedagogia',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //51
+          'nome' => 'Licenciatura em Educação Física',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //52
+          'nome' => 'Engenharia Agrícola e Ambiental',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //53
+          'nome' => 'Bacharelado em Sistemas da Informação',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //54
+          'nome' => 'Licenciatura em Física',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //55
+          'nome' => 'Licenciatura em História',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //56
+          'nome' => 'Licenciatura em Letras (Português e Espanhol)',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //57
+          'nome' => 'Licenciatura em Matemática',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //58
+          'nome' => 'Medicina Veterinária',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //59
+          'nome' => 'Engenharia de Pesca',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //60
+          'nome' => 'Licenciatura em Química',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //61
+          'nome' => 'Zootecnia',
+          'tipoUnidadeId' => 5,
+        ]);
+
+        //--------------------------------------------------------- Departamentos
+
+        DB::table('unidade_orgs')->insert([ //62
+          'nome'      => 'Unidade Acadêmica de Garanhuns',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //63
+          'nome'      => 'Unidade Acadêmica de Serra Talhada',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //64
+          'nome'      => 'Unidade Acadêmica do Cabo de Santo Agostinho',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //65
+          'nome'      => 'Administração',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //66
+          'nome'      => 'Agronomia',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //67
+          'nome'      => 'Biologia',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //68
+          'nome'      => 'Ciência Florestal',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //69
+          'nome'      => 'Ciências do Consumo',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //70
+          'nome'      => 'Ciências Sociais',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //71
+          'nome'      => 'Computação',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //72
+          'nome'      => 'Economia',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //73
+          'nome'      => 'Educação',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //74
+          'nome'      => 'Educação Física',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //75
+          'nome'      => 'Engenharia Agrícola',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //76
+          'nome'      => 'Estatística e Informática',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //77
+          'nome'      => 'Física',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //78
+          'nome'      => 'História',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //79
+          'nome'      => 'Letras',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //80
+          'nome'      => 'Matemática',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //81
+          'nome'      => 'Medicina Veterinária',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //82
+          'nome'      => 'Pesca e Aquicultura',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //83
+          'nome'      => 'Química',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //84
+          'nome'      => 'Zootecnia',
+          'tipoUnidadeId'   => 3,
+        ]);
+
+        DB::table('unidade_orgs')->insert([ //85
+          'nome'      => 'Educação a distância',
+          'tipoUnidadeId'   => 3,
+        ]);
+
         $cursos = [ 'Unidade Academica de Garanhuns'                => [
                                                                         'Bacharelado em Agronomia',
                                                                         'Bacharelado em Ciências da Computação',
@@ -277,19 +554,35 @@ class DatabaseSeeder extends Seeder
           'Unidade Acadêmica de Garanhuns',
           'Unidade Acadêmica de Serra Talhada',
           'Unidade Acadêmica do Cabo de Santo Agostinho',
-          'Administração', 'Agronomia', 'Biologia', 'Ciência Florestal', 'Ciências do Consumo',
-          'Ciências Sociais', 'Computação', 'Economia', 'Educação', 'Educação Física', 'Engenharia Agrícola',
-          'Estatística e Informática', 'Física', 'História', 'Letras', 'Matemática', 'Medicina Veterinária',
-          'Pesca e Aquicultura', 'Química', 'Zootecnia',
+          'Administração',
+          'Agronomia',
+          'Biologia',
+          'Ciência Florestal',
+          'Ciências do Consumo',
+          'Ciências Sociais',
+          'Computação',
+          'Economia',
+          'Educação',
+          'Educação Física',
+          'Engenharia Agrícola',
+          'Estatística e Informática',
+          'Física',
+          'História',
+          'Letras',
+          'Matemática',
+          'Medicina Veterinária',
+          'Pesca e Aquicultura',
+          'Química',
+          'Zootecnia',
           'Educação a distância',
         ];
 
-        for ($i=0; $i < sizeof($departamentos); $i++) {
-          DB::table('unidade_orgs')->insert([
-            'nome'      => $departamentos[$i],
-            'tipoUnidadeId'   => 3,
-          ]);
-        }
+        // for ($i=0; $i < sizeof($departamentos); $i++) {
+        //   DB::table('unidade_orgs')->insert([
+        //     'nome'      => $departamentos[$i],
+        //     'tipoUnidadeId'   => 3,
+        //   ]);
+        // }
 
         $cursosApi = [
           [
@@ -489,7 +782,7 @@ class DatabaseSeeder extends Seeder
         //--------------------------------------------------------- Users
 
         DB::table('users')->insert([
-          'name' => 'asdasd',
+          'name' => 'Coordenador',
           'email' => 'coord@api.com',
           'password' => bcrypt('12345678'),
           'tipoUsuarioId' => 2,
@@ -497,28 +790,28 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('users')->insert([
-          'name' => 'asdasd',
+          'name' => 'Coordenador',
           'email' => 'coord2@api.com',
           'password' => bcrypt('12345678'),
           'tipoUsuarioId' => 2,
           'unidadeOrgId' => 12,
         ]);
         DB::table('users')->insert([
-          'name' => 'asdasd',
+          'name' => 'Coordenador',
           'email' => 'coordUAG@api.com',
           'password' => bcrypt('12345678'),
           'tipoUsuarioId' => 3,
           'unidadeOrgId' => 1,
         ]);
         DB::table('users')->insert([
-          'name' => 'asdasd',
+          'name' => 'Pró-Reitoria de Ensino de Graduação',
           'email' => 'preg@api.com',
           'password' => bcrypt('12345678'),
           'tipoUsuarioId' => 1,
           'unidadeOrgId' => 6,
         ]);
         DB::table('users')->insert([
-          'name' => 'asdasd',
+          'name' => 'Departamento de Registro e Controle Acadêmico',
           'email' => 'drca@api.com',
           'password' => bcrypt('12345678'),
           'tipoUsuarioId' => 5,
@@ -529,7 +822,7 @@ class DatabaseSeeder extends Seeder
 
         for($i = 11; $i < 18; $i++){
           DB::table('subordinacaos')->insert([  //1
-            'unidadeOrgId' => 32,
+            'unidadeOrgId' => 62,
             'moduloId' => 1,
             'unidadeOrgIdSubordinada' => $i,
           ]);
@@ -537,7 +830,7 @@ class DatabaseSeeder extends Seeder
 
         for($i = 18; $i < 27; $i++){
           DB::table('subordinacaos')->insert([  //2
-            'unidadeOrgId' => 33,
+            'unidadeOrgId' => 63,
             'moduloId' => 1,
             'unidadeOrgIdSubordinada' => $i,
           ]);
@@ -545,11 +838,150 @@ class DatabaseSeeder extends Seeder
 
         for($i = 27; $i < 32; $i++){
           DB::table('subordinacaos')->insert([  //3
-            'unidadeOrgId' => 34,
+            'unidadeOrgId' => 64,
             'moduloId' => 1,
             'unidadeOrgIdSubordinada' => $i,
           ]);
         }
+
+        for($i = 32; $i < 41; $i++){
+          DB::table('subordinacaos')->insert([  //3
+            'unidadeOrgId' => 85,
+            'moduloId' => 1,
+            'unidadeOrgIdSubordinada' => $i,
+          ]);
+        }
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 65,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 41,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 66,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 42,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 67,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 43,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 68,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 44,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 69,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 45,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 70,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 46,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 71,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 47,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 71,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 48,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 72,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 49,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 73,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 50,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 74,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 51,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 75,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 52,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 76,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 53,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 77,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 54,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 78,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 55,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 79,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 56,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 80,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 57,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 81,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 58,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 82,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 59,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 83,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 60,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //3
+          'unidadeOrgId' => 84,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 61,
+        ]);
+
+        // 41 61
+        // 65 84
+
+        //--------------------------------------------------------- Subordinacao com a preg -> campus
 
         DB::table('subordinacaos')->insert([  //4
           'unidadeOrgId' => 6,
@@ -570,22 +1002,54 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('subordinacaos')->insert([  //7
-          'unidadeOrgId' => 1,
+          'unidadeOrgId' => 6,
           'moduloId' => 1,
-          'unidadeOrgIdSubordinada' => 32,
+          'unidadeOrgIdSubordinada' => 4,
         ]);
 
         DB::table('subordinacaos')->insert([  //8
-          'unidadeOrgId' => 2,
+          'unidadeOrgId' => 6,
           'moduloId' => 1,
-          'unidadeOrgIdSubordinada' => 33,
+          'unidadeOrgIdSubordinada' => 5,
         ]);
 
+        //--------------------------------------------------------- Subordinacao com a campus -> departamentos
+
+
         DB::table('subordinacaos')->insert([  //9
+          'unidadeOrgId' => 1,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 62,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //10
+          'unidadeOrgId' => 2,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 63,
+        ]);
+
+        DB::table('subordinacaos')->insert([  //11
           'unidadeOrgId' => 3,
           'moduloId' => 1,
-          'unidadeOrgIdSubordinada' => 34,
+          'unidadeOrgIdSubordinada' => 64,
         ]);
+
+        DB::table('subordinacaos')->insert([  //12
+          'unidadeOrgId' => 4,
+          'moduloId' => 1,
+          'unidadeOrgIdSubordinada' => 85,
+        ]);
+
+        // for sede > departamentos
+
+        for($i = 65; $i < 85; $i++){
+          DB::table('subordinacaos')->insert([  //13 - 23
+            'unidadeOrgId' => 5,
+            'moduloId' => 1,
+            'unidadeOrgIdSubordinada' => $i,
+          ]);
+        }
+
 
 
 
