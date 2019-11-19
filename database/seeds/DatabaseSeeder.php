@@ -785,7 +785,7 @@ class DatabaseSeeder extends Seeder
         for($i = 1; $i < 62; $i++){
            DB::table('users')->insert([
           'name' => 'Coordenador',
-          'email' => 'coord@api.com',
+          'email' => 'coord' . $i . '@api.com',
           'password' => bcrypt('12345678'),
           'tipoUsuarioId' => 2,
           'unidadeOrgId' => 11,
