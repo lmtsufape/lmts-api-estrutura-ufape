@@ -759,25 +759,15 @@ class DatabaseSeeder extends Seeder
           'tipoUsuarioId' => 4,
           'nivel' => 1,
         ]);
-        DB::table('controle_de_acessos')->insert([  //10
-          'acaoId' => 9,
-          'tipoUsuarioId' => 1,
-          'nivel' => 3,
-        ]);
-        DB::table('controle_de_acessos')->insert([  //11
-          'acaoId' => 9,
-          'tipoUsuarioId' => 3,
-          'nivel' => 2,
-        ]);
-        DB::table('controle_de_acessos')->insert([  //12
-          'acaoId' => 9,
-          'tipoUsuarioId' => 2,
+        DB::table('controle_de_acessos')->insert([  //4
+          'acaoId' => 3,
+          'tipoUsuarioId' => 5,
           'nivel' => 1,
         ]);
 
         //--------------------------------------------------------- Users
-        
-        
+
+
         for($i = 1; $i < 62; $i++){
            DB::table('users')->insert([
           'name' => 'Coordenador',
@@ -785,9 +775,9 @@ class DatabaseSeeder extends Seeder
           'password' => bcrypt('12345678'),
           'tipoUsuarioId' => 2,
           'unidadeOrgId' => 11,
-          ]);            
+          ]);
         }
-        
+
         //DB::table('users')->insert([
         //  'name' => 'Coordenador',
         //  'email' => 'coord@api.com',
@@ -803,7 +793,7 @@ class DatabaseSeeder extends Seeder
         //  'tipoUsuarioId' => 2,
         //  'unidadeOrgId' => 12,
         //]);
-        
+
         DB::table('users')->insert([
           'name' => 'Coordenador',
           'email' => 'coordUAG@api.com',
@@ -811,7 +801,7 @@ class DatabaseSeeder extends Seeder
           'tipoUsuarioId' => 3,
           'unidadeOrgId' => 1,
         ]);
-        
+
         DB::table('users')->insert([
           'name' => 'Pró-Reitoria de Ensino de Graduação',
           'email' => 'preg@api.com',
@@ -819,7 +809,7 @@ class DatabaseSeeder extends Seeder
           'tipoUsuarioId' => 1,
           'unidadeOrgId' => 6,
         ]);
-        
+
         DB::table('users')->insert([
           'name' => 'Departamento de Registro e Controle Acadêmico',
           'email' => 'drca@api.com',
