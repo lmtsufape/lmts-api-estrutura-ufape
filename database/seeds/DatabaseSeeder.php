@@ -684,11 +684,11 @@ class DatabaseSeeder extends Seeder
           'moduloId' => 1,
         ]);
         DB::table('acaos')->insert([  //2
-          'nome' => 'classificar inscrições',
+          'nome' => 'classificar inscricoes',
           'moduloId' => 1,
         ]);
         DB::table('acaos')->insert([  //3
-          'nome' => 'homologar inscrições',
+          'nome' => 'homologar inscricoes',
           'moduloId' => 1,
         ]);
         DB::table('acaos')->insert([  //4
@@ -696,7 +696,7 @@ class DatabaseSeeder extends Seeder
           'moduloId' => 1,
         ]);
         DB::table('acaos')->insert([  //5
-          'nome' => 'homologar isenções',
+          'nome' => 'homologar isencoes',
           'moduloId' => 1,
         ]);
         DB::table('acaos')->insert([  //6
@@ -704,15 +704,11 @@ class DatabaseSeeder extends Seeder
           'moduloId' => 1,
         ]);
         DB::table('acaos')->insert([  //7
-          'nome' => 'cadastrar inscrições',
+          'nome' => 'cadastrar inscricoes',
           'moduloId' => 1,
         ]);
         DB::table('acaos')->insert([  //8
-          'nome' => 'cadastrar isenções',
-          'moduloId' => 1,
-        ]);
-        DB::table('acaos')->insert([  //9
-          'nome' => 'listar cursos',
+          'nome' => 'cadastrar isencoes',
           'moduloId' => 1,
         ]);
 
