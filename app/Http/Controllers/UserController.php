@@ -15,9 +15,9 @@ class UserController extends Controller
       $response = [
                     'id' => $user->id,
                     'email' => $user->email,
-                    'cursoId' => $user->unidadeOrg->id,
-                    'tipo' => $user->tipoUsuario->nome,
-                    'tipoUsuario' => $user->tipoUsuarioId,
+                    'unidadeOrgId' => $user->unidadeOrg->id,
+                    'tipoNome' => $user->tipoUsuario->nome,
+                    'tipoUsuarioId' => $user->tipoUsuarioId,
                   ];
       return response()->json($response, 201);
     }
