@@ -14,15 +14,8 @@ class ChavesEstrangeiras extends Migration
     public function up()
     {
       Schema::table('users', function (Blueprint $table) {
-          $table->foreign('cursoId')->references('id')->on('cursos')->nullable();
           $table->foreign('tipoUsuarioId')->references('id')->on('tipo_usuarios')->nullable();
           $table->foreign('unidadeOrgId')->references('id')->on('unidade_orgs')->nullable();
-      });
-      Schema::table('cursos', function (Blueprint $table) {
-          $table->foreign('departamentoId')->references('id')->on('departamentos')->nullable();
-      });
-      Schema::table('departamentos', function (Blueprint $table) {
-          $table->foreign('campusId')->references('id')->on('campuses')->nullable();
       });
       Schema::table('tipo_usuarios', function (Blueprint $table) {
           $table->foreign('unidadeOrgId')->references('id')->on('unidade_orgs')->nullable();
