@@ -38,6 +38,7 @@ Route::get('/usuario/preg/getEmails',                       'UserController@getE
 
 Route::get('/check',                                        'AuthController@check'                        )->middleware('auth:api');
 
-Route::get('/getEmails/{idUnidade}',                        'UserController@getEmailsPorUnidade' );
+Route::get('/getEmails/{idUnidade}',                        'UserController@getEmailsPorUnidade'          );
 Route::get('/{modulo}/getUnidades/{raiz}/{tipoUnidade}',    'ModuloController@getUnidadesRaizTipoUnidade' );
-Route::get('/{modulo}/getAcl/{tipoUsuario}',                'ControleDeAcessoController@getAcl');
+Route::get('/{modulo}/getPais/{raiz}/{idUnidade}',          'ModuloController@getPais'                    );
+Route::get('/{modulo}/getAcl/{tipoUsuario}',                'ControleDeAcessoController@getAcl'           );

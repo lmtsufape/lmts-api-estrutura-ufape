@@ -82,8 +82,6 @@ class ModuloController extends Controller
     }
   }
 
-
-
   public function getUnidadesRaizTipoUnidade($modulo, $raiz, $tipoUnidade){
       $unidadeRaiz = UnidadeOrg::find($raiz);
       if($unidadeRaiz->tipoUnidade->id == $tipoUnidade){
@@ -122,6 +120,30 @@ class ModuloController extends Controller
       return response()->json($response, 200);
 
 
+  }
+
+  public function getPais($modulo, $raiz, $idUnidade){
+    $unidadeRaiz = UnidadeOrg::find($raiz);
+    if($unidadeRaiz->id == $idUnidade){
+      return response()->json($unidadeRaiz);
+    }
+    $stringResponse = $this->recursaoGetPaisPorFolha($modulo, $raiz, $idUnidade);
+    $stringResponse = explode(',', $stringResponse);
+    $response = [];
+    for($i = 0; $i < sizeof($stringResponse); $i++){
+      if($stringResponse[$i] != ''){
+        array_push($response, $stringResponse[$i]);
+      }
+    }
+    for($j = 0; $j < sizeof($response); $j++) {
+      $aux1 = UnidadeOrg::find($response[$j]);
+      $response[$j] = [
+                    'id' => $aux1->id,
+                    'nome' => $aux1->nome,
+                    'tipoUnidade' => $aux1->tipoUnidade->nome,
+                 ];
+    }
+    return response()->json($response, 200);
   }
 
 
