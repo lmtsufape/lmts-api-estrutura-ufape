@@ -677,7 +677,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('tipo_usuarios')->insert([  //7
-          'nome' => 'CPE',
+          'nome' => 'CGE',
         ]);
 
         DB::table('tipo_usuarios')->insert([  //8
