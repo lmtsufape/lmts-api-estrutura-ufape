@@ -11,6 +11,66 @@ class Modulo2Seeder extends Seeder
      */
     public function run()
     {
+      //--------------------------------------------------------- Ações
+
+      DB::table('acaos')->insert([  //9
+        'nome' => 'parecer capr',
+        'moduloId' => 2,
+      ]);
+      DB::table('acaos')->insert([  //10
+        'nome' => 'parecer cpga',
+        'moduloId' => 2,
+      ]);
+      DB::table('acaos')->insert([  //11
+        'nome' => 'parecer cge',
+        'moduloId' => 2,
+      ]);
+      DB::table('acaos')->insert([  //12
+        'nome' => 'abrir ppc',
+        'moduloId' => 2,
+      ]);
+      DB::table('acaos')->insert([  //13
+        'nome' => 'nova versao ppc',
+        'moduloId' => 2,
+      ]);
+      DB::table('acaos')->insert([  //14
+        'nome' => 'reabrir ppc',
+        'moduloId' => 2,
+      ]);
+
+      //--------------------------------------------------------- ACL
+
+      DB::table('controle_de_acessos')->insert([  //1
+        'acaoId' => 9,
+        'tipoUsuarioId' => 6,
+        'nivel' => 1,
+      ]);
+      DB::table('controle_de_acessos')->insert([  //2
+        'acaoId' => 10,
+        'tipoUsuarioId' => 8,
+        'nivel' => 1,
+      ]);
+      DB::table('controle_de_acessos')->insert([  //3
+        'acaoId' => 11,
+        'tipoUsuarioId' => 7,
+        'nivel' => 1,
+        ]);
+      DB::table('controle_de_acessos')->insert([  //4
+      'acaoId' => 12,
+      'tipoUsuarioId' => 2,
+      'nivel' => 1,
+      ]);
+      DB::table('controle_de_acessos')->insert([  //5
+      'acaoId' => 13,
+      'tipoUsuarioId' => 2,
+      'nivel' => 1,
+      ]);
+      DB::table('controle_de_acessos')->insert([  //6
+      'acaoId' => 14,
+      'tipoUsuarioId' => 2,
+      'nivel' => 1,
+      ]);
+
       //--------------------------------------------------------- Subordinacao
 
       for($i = 11; $i < 18; $i++){
