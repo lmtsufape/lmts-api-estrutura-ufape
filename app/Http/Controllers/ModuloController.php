@@ -87,7 +87,7 @@ class ModuloController extends Controller
       if($unidadeRaiz->tipoUnidade->id == $tipoUnidade){
         return response()->json($unidadeRaiz);
       }
-      $stringResponse = $this->recursaoGetUnidadesRaizTipoUnidade($modulo, $raiz, $tipoUnidade);
+      $stringResponse = $this->recursaoGetUnidadesRaizTipoUnidade($modulo, 1, 5);
       $stringResponse = explode(',', $stringResponse);
       $response = [];
       $aux = [];
