@@ -47,7 +47,7 @@ class DatabaseSeeder extends Seeder
         //--------------------------------------------------------- Unidades Org
 
         DB::table('unidade_orgs')->insert([ //1
-          'nome' => 'Unidade Acadêmica de Garanhuns',
+          'nome' => 'Universidade Federal do Agreste de Pernambuco',
           'tipoUnidadeId' => 2,
         ]);
 
@@ -353,7 +353,7 @@ class DatabaseSeeder extends Seeder
         //--------------------------------------------------------- Departamentos
 
         DB::table('unidade_orgs')->insert([ //62
-          'nome'      => 'Unidade Acadêmica de Garanhuns',
+          'nome'      => 'Universidade Federal do Agreste de Pernambuco',
           'tipoUnidadeId'   => 3,
         ]);
 
@@ -557,7 +557,7 @@ class DatabaseSeeder extends Seeder
 
 
         $departamentos = [
-          'Unidade Acadêmica de Garanhuns',
+          'Universidade Federal do Agreste de Pernambuco',
           'Unidade Acadêmica de Serra Talhada',
           'Unidade Acadêmica do Cabo de Santo Agostinho',
           'Administração',
